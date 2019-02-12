@@ -16,7 +16,7 @@ var deasync = require('deasync');
 var rule = new schedule.RecurrenceRule();
 // rule.dayOfWeek = [0, new schedule.Range(4, 6)];
 rule.hour = [14];
-rule.minute = 16;
+rule.minute = 20;
 
 
 
@@ -200,7 +200,7 @@ var j = schedule.scheduleJob(rule, function() { // rule hour at 5 minutes
                                 audio.path = "https://rawcdn.githack.com/quiet324/LiangYouRadioResource" + year + week + "/" + commitTag + "/" + artist.shortName + "/" + fileName;
                                 audio.id = artist.id * 1000000 + parseInt(audio.time.substring(2), 10);
 
-                                if (!fs.existsSync("./" + artist.shortName + audio.time + ".json")) {
+                                if (fs.existsSync("./" + artist.shortName + audio.time + ".json")) {
 
                                     return;
                                 }
