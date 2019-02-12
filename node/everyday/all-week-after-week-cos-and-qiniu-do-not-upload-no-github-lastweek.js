@@ -232,16 +232,16 @@ var j = schedule.scheduleJob(rule, function() { // rule hour at 5 minutes
                             if (!fs.existsSync(file)) { //
                                 // Do something
 
-                                console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + "downloading... " + audio.downUrl);
+                               // console.log(moment().format('MMMM Do YYYY, h:mm:ss a') + "downloading... " + audio.downUrl);
 
-                                var data = require('child_process').execFileSync('curl', ['-L', audio.downUrl]);
+                                //var data = require('child_process').execFileSync('curl', ['-L', audio.downUrl]);
 
                                 // var data = require('child_process').execFileSync('curl', ['--silent', '-L', audio.downUrl]);
                                 // var data = downloadFileSync(audio.downUrl)
 
-                                mkdirp.sync('../../' + artist.shortName);
+                                //mkdirp.sync('../../' + artist.shortName);
 
-                                fs.writeFileSync('../../' + artist.shortName + '/' + fileName, data);
+                                //fs.writeFileSync('../../' + artist.shortName + '/' + fileName, data);
 
 
 
