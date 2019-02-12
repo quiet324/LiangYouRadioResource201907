@@ -16,7 +16,7 @@ var deasync = require('deasync');
 var rule = new schedule.RecurrenceRule();
 // rule.dayOfWeek = [0, new schedule.Range(4, 6)];
 rule.hour = [13];
-rule.minute = 15;
+rule.minute = 24;
 
 
 
@@ -231,6 +231,10 @@ var j = schedule.scheduleJob(rule, function() { // rule hour at 5 minutes
 
  			    var forCosAudioFile2 = {};
                             forCosAudioFile2.fileName = file;
+
+			    if (_.some(audioFilesForCOS, forCosAudioFile2)) {
+			    	return;
+			    }
                             if (!_.some(audioFilesForCOS, forCosAudioFile2)) {
                             //if (!fs.existsSync(file)) { //
                                 // Do something
